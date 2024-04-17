@@ -1,0 +1,174 @@
+{{ define "ItemPage"}}
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/templates/index.css" rel="stylesheet">
+    <link href="/templates/Item/Item.css" rel="stylesheet">
+    <title>{{ .Name }}</title>
+	<style>
+		.slider-container {
+			width: 80%;
+			margin: auto;
+			overflow: hidden;
+			position: relative;
+		}
+		.slides {
+			display: flex;
+			transition: transform 0.5s ease-in-out;
+		}
+		.slide {
+			min-width: 100%;
+			text-align: center;
+		}
+		.slide img {
+			width: 225px;
+			height: 355px;
+			object-fit: cover;
+		}
+		.slider-btns {
+			text-align: center;
+			margin-top: 10px;
+		}
+		.slider-btns button {
+			padding: 8px 16px;
+			margin: 0 5px;
+			cursor: pointer;
+		}
+		
+	</style>
+</head>
+<body>
+
+	<header>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="/templates/images/logo.png" class="rounded float-start" alt="logo">
+                </div>
+
+                <div class="col-6">
+                    <h1 class="text-center text-black">Подробное описание</h1>     
+                </div>
+
+                <div class="col-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="/Profile">
+                                <button type="button" class="btn btn-dark">
+                                    Профиль                             
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="/Login">
+                                <button type="button" class="btn btn-dark">
+                                    Вход Регистрация                             
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+	<nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <a class="nav-link" href="/Main">
+                        <p>Главная</p>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a class="nav-link" href="/Catalog">
+                        <p>Каталог</p>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a class="nav-link" href="/Feedback">
+                        <p>Обратная связь</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+	<div class="row">
+		<div class="col-6">
+			<div id="myHiddenCotainer" style="display: none;">{{.Slide}}</div>
+			<div class="slider-container">
+				<div class="slides">
+				<!-- Добавленный JavaScript будет генерировать слайды с изображениями -->
+				</div>
+			</div>
+			
+			<div class="slider-btns">
+				<button onclick="plusSlides(-1)">Назад</button>
+				<button onclick="plusSlides(1)">Вперед</button>
+			</div>
+		</div>
+		
+		<div class="col-6 text">
+			<div class="row string">Сезон: {{ .Season }} </div>
+			<div class="row string">Название: {{ .Name }}</div>
+			<div class="row string">Тип обуви: {{ .Type }}</div>
+			<div class="row string">Цвет: {{ .Color }} </div>
+			<div class="row string">Материал: {{ .Material }}</div>
+			<div class="row string">Цена: {{ .Price }} руб.</div>
+			<div class="row string">Тип каблука: {{ .Lift }}</div>
+			<div class="row string">Страна производства: {{ .Country }} </div>
+				<a href="/AddInCart/{{ .Id }}">
+					<button type="button" class="btn btn-dark">Добавить в корзину</button>
+				</a>
+		</div>
+		
+	</div>
+
+
+<script>
+	const imageNames = document.getElementById("myHiddenCotainer").innerText;
+	const imagesArray = imageNames.split(' ');
+  
+	const sliderContainer = document.querySelector('.slides');
+	imagesArray.forEach(image => {
+	  const slideDiv = document.createElement('div');
+	  slideDiv.classList.add('slide');
+	  const img = document.createElement('img');
+	  img.src = image;
+	  img.alt = image;
+	  slideDiv.appendChild(img);
+	  sliderContainer.appendChild(slideDiv);
+	});
+  
+	let slideIndex = 1;
+	showSlides(slideIndex);
+  
+	function plusSlides(n) {
+	  showSlides(slideIndex += n);
+	}
+  
+	function showSlides(n) {
+	  const slides = document.querySelectorAll('.slide');
+	  if (n > slides.length) {
+		slideIndex = 1;
+	  }
+	  if (n < 1) {
+		slideIndex = slides.length;
+	  }
+	  for (let i = 0; i < slides.length; i++) {
+		slides[i].style.display = 'none';
+	  }
+	  slides[slideIndex - 1].style.display = 'block';
+	}
+</script>
+  
+</body>
+</html>
+
+{{ end }}

@@ -1,0 +1,36 @@
+.content{
+    text-align: center;
+    padding-bottom: 40px;
+    
+}
+
+p{
+    padding-top: 10px;
+}
+
+.item {
+    background-color: #1AACAC;
+    font-size: 20px;
+}
+
+.img {
+    height: 260px;
+    width: 200px;
+    padding: 10px 0;
+    border-radius: 25px;
+}
+
+.button {
+    background-color: black;
+    border-radius: 5px;
+    color: white;
+}
+
+.link {
+    color: white;
+}
+
+.search-form  {
+    width: 80%;
+    text-align: center;
+}

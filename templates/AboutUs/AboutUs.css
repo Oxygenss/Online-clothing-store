@@ -1,0 +1,19 @@
+.upper{
+    background-color:#1AACAC;
+    color: white;
+    margin: 0;
+    width: 100%;
+    padding: 60px 0; 
+    text-align: justify;
+}
+
+.center {
+    text-align: center;
+}
+
+.lower{
+    background-color: white;
+    padding: 60px 0;
+    text-align: justify;
+}
+

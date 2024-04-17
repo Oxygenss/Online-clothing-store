@@ -1,0 +1,36 @@
+
+.section-left{
+    background-color: #1AACAC;
+}
+
+.section-mid{
+    margin: 0;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.section-right{
+    background-color: #1AACAC;
+}
+
+.banners{
+    padding: 10px 10px 0 10px;
+}
+
+ol{
+    list-style-type: none;
+}
+
+ul{
+    list-style-type: none;
+}
+
+.img-ol{
+    width: 20px;
+    height: 20px;
+}
+
+.text {
+    margin: 0;
+    text-align: justify;
+}

@@ -1,0 +1,108 @@
+{{ define "Feedback"}}
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/templates/index.css" rel="stylesheet">
+    <link href="/templates/Feedback/Feedback.css" rel="stylesheet">
+    <title>Feedback</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="/templates/images/logo.png" class="rounded float-start" alt="logo">
+                </div>
+
+                <div class="col-6">
+                    <h1 class="text-center text-black">Обратная связь</h1>     
+                </div>
+
+                <div class="col-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="/Profile">
+                                <button type="button" class="btn btn-dark">
+                                    Профиль                             
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="/Login">
+                                <button type="button" class="btn btn-dark">
+                                    Вход Регистрация                             
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <a class="nav-link" href="/Main">
+                        <p>Главная</p>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a class="nav-link" href="/Catalog">
+                        <p>Каталог</p>
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a class="nav-link" href="/Feedback">
+                        <p>Обратная связь</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
+
+    
+    
+
+    <form action="/Articles" method="post">
+        <div class="mb-3">
+            <label for="Name" class="form-label">Name</label>
+            <input name="name" type="text" class="form-control" id="Name">
+        </div>
+
+        <div class="mb-3">
+          <label for="Email" class="form-label">Email address</label>
+          <input name="email" type="email" class="form-control" id="Email">
+        </div>
+
+        <div class="mb-3">
+            <label for="Textarea" class="form-label">Text area</label>
+            <textarea name="text" class="form-control" id="Textarea" rows="3"></textarea>
+        </div>
+        
+        <div class="row rows">
+            <div class="col-12">
+                <button class="btn btn-dark button">Отправить</button>
+            </div>
+        </div>
+    </form>
+
+    <a href="/AllFeed" class="btn btn-danger">Все отзывы</a>
+
+    
+    <footer>
+        <p>@ 2023 Все права защищены</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
+
+{{ end }}
+

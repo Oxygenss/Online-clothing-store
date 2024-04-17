@@ -1,0 +1,44 @@
+
+p{
+    padding-top: 10px;
+}
+
+.content{
+    text-align: center;
+    padding-bottom: 100px;
+    
+}
+
+.item {
+    background-color: #1AACAC;
+    font-size: 20px;
+}
+
+.img {
+    height: 260px;
+    width: 200px;
+    padding: 10px 0;
+    border-radius: 25px;
+}
+
+.button {
+    background-color: black;
+    width: 150px;
+    border-radius: 5px;
+}
+
+.link {
+    color: white;
+}
+
+.sum {
+    background-color: #1AACAC;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 40px;
+    padding-bottom: 90px;
+    font-size: 20px;
+    text-align: center;
+    line-height: 40px; /* Выравнивание текста по вертикали */
+}

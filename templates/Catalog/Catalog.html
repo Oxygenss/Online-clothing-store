@@ -1,0 +1,121 @@
+{{ define "Catalog"}}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link href="/templates/index.css" rel="stylesheet">
+    <link href="/templates/Catalog/Catalog.css" rel="stylesheet">
+    <title>Catalog</title>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <img src="/templates/images/logo.png" class="rounded float-start" alt="logo">
+                </div>
+
+                <div class="col-6">
+                    <h1 class="text-center text-black">Каталог</h1>     
+                </div>
+
+                <div class="col-3">
+                    <div class="row">
+                        <div class="col-6">
+                            <a href="/Profile">
+                                <button type="button" class="btn btn-dark">
+                                    Профиль                             
+                                </button>
+                            </a>
+                        </div>
+                        <div class="col-6">
+                            <a href="/Login">
+                                <button type="button" class="btn btn-dark">
+                                    Вход Регистрация                             
+                                </button>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="container">
+            <div class="row">
+                <div class="col-4">
+                    <a class="nav-link" href="/Main">
+                        Главная
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a class="nav-link" href="/Catalog">
+                        Каталог
+                    </a>
+                </div>
+                <div class="col-4">
+                    <a class="nav-link" href="/Feedback">
+                        Обратная связь
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <div class="col-6">
+        <a href="/Cart">
+            <button type="button" class="btn btn-dark">Корзина</button>
+        </a>
+    </div>
+
+    <form class="search-form" action="/Search" method="GET">
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Поиск" name="query">
+            <button class="button" type="submit">Найти</button>
+        </div>
+    </form>
+    {{ range . }}
+    <div class="content">
+        <div class="item">
+            <div class="row">
+                <div class="col-3">
+                    <img class="img" src="{{ .Img }}" alt="ku">
+                </div>
+                <div class="col-3">
+                    
+                </div>
+                <div class="col-3">
+                    <p> {{ .Name }} </p>
+                    <p> {{ .Type }} </p>
+                    <p> {{ .Color }} </p>
+                    <p> {{ .Material }} </p>
+                    <p> {{ .Price }} руб. </p>
+                    <div class="button">
+                        <a class="link" href="/Item/{{ .Id }}" class="">Подробнее</a>
+                    </div>
+                </div>
+                <div class="col-3">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ else }}
+    <p class="lead">Товаров нет!</p>
+
+    {{ end }}
+
+    
+    <footer>
+        <p>@ 2023 Все права защищены</p>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</body>
+</html>
+
+{{ end }}

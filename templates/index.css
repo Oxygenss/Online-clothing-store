@@ -1,0 +1,46 @@
+header {
+    padding: 30px 0; 
+    background-color: #1AACAC;
+}
+
+nav{
+    background-color: black;
+}
+
+footer{
+    background-color: #1AACAC;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+.text-footer{
+    text-align: center;
+}
+
+.nav-link{
+    text-align: center;
+    color: white;
+    font-size: 20px;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+p{
+    margin: 0 0 0 0;
+}
+
+button{
+    padding-left: 10px;
+    padding-right: 10px;
+
+    min-width: 150px;
+    max-width: 150px;
+
+    min-height: 70px;
+    max-height: 70px;
+}
